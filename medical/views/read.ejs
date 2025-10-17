@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Feedback List</title>
+    <link rel="stylesheet" href="/stylesheets/read.css" />
+</head>
+<body>
+
+  <h1>Feedback list</h1>
+
+  <% if (data.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Message</th>
+          <th>Date Created</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(contact => { %>
+          <tr>
+            <td data-label="Name"><%= contact.name %></td>
+            <td data-label="Email"><%= contact.email %></td>
+            <td data-label="Message"><%= contact.message %></td>
+            <td data-label="Date Created"><%= contact.createdAt ? contact.createdAt.toLocaleDateString() : 'N/A' %></td>
+            <td data-label="Delete">
+              <a href="/contactus/delete/<%= contact._id %>">Delete</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p>No message found</p>
+  <% } %>
+
+  <ul>
+    <li><a href="/home">Back</a></li>
+  </ul>
+
+</body>
+</html>

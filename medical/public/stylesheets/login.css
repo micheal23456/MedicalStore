@@ -1,0 +1,117 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  color: #e0f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  font-size: 16px;
+  user-select: none;
+}
+
+/* Heading */
+h1 {
+  font-size: 3rem;
+  color: #00e5ff;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px #00e5ff;
+}
+
+/* Form */
+form {
+  background: rgba(0, 230, 255, 0.12);
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #00e5ff88;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+label {
+  font-size: 1.1rem;
+  color: #95e9ff;
+  user-select: none;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  background: #203a43cc;
+  color: #e0f7fa;
+  box-shadow: inset 0 0 10px #00e5ff44;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background: #00bcd4cc;
+  box-shadow: 0 0 20px #00e5ff;
+}
+
+input[type="submit"] {
+  background: #00e5ff;
+  color: #020202;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  padding: 0.9rem 0;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 0 25px #00e5ff;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+input[type="submit"]:hover {
+  background: #008ea4;
+  box-shadow: 0 0 35px #008ea4 inset;
+}
+
+/* Error messages */
+div[style] {
+  max-width: 400px;
+  background: #ff0033cc;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  margin-top: 1.5rem;
+  box-shadow: 0 0 15px #ff003399;
+  color: white;
+  user-select: none;
+}
+
+div[style] ul {
+  list-style: inside disc;
+  padding-left: 1rem;
+}
+
+div[style] li {
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  form {
+    padding: 1.5rem 2rem;
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><% title = 'shop' %></title>
+           <link rel="stylesheet" href="/stylesheets/shop.css">
+
+</head>
+<body>
+  <h1>available medicine</h1>
+
+<form method="GET" action="/products/shop" style="margin-bottom: 20px;">
+  <input type="text" name="search" placeholder="Search Products" value="<%= search %>"/>
+  <button type="submit">Search</button>
+</form>
+
+<% if (products.length > 0) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach(product => { %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.stock %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } else { %>
+  <p>No Products found.</p>
+<% } %>
+
+<nav aria-label="Page navigation example" style="margin:auto;">
+  <% if (pagination.hasPrevPage) { %>
+    <a href="?page=1&search=<%= encodeURIComponent(search) %>">&laquo; first</a>
+    <a href="?page=<%= pagination.prevPage %>&search=<%= encodeURIComponent(search) %>">&laquo; previous</a>
+  <% } %>
+
+  <% for (let page_number = 1; page_number <= pagination.totalPages; page_number++) { %>
+    <% if (pagination.page === page_number) { %>
+      <span><%= page_number %></span>
+    <% } else { %>
+      <a href="?page=<%= page_number %>&search=<%= encodeURIComponent(search) %>"><%= page_number %></a>
+    <% } %>
+  <% } %>
+
+  <% if (pagination.hasNextPage) { %>
+    <a href="?page=<%= pagination.nextPage %>&search=<%= encodeURIComponent(search) %>">next &raquo;</a>
+    <a href="?page=<%= pagination.totalPages %>&search=<%= encodeURIComponent(search) %>">last &raquo;</a>
+  <% } %>
+</nav>
+                <li><a href="/home">home</a></li>
+
+</body>
+</html>
+
+

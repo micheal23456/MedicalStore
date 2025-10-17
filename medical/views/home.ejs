@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Medical Store - Home</title>
+  <link rel="stylesheet" href="/stylesheets/home.css" />
+ 
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <span class="logo">MediCare Store</span>
+      <ul>
+  <li class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">
+      Products
+      <svg width="16" height="16" fill="#e0f7fa" style="margin-left:4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 8l4 4 4-4H6z"/></svg>
+    </a>
+    <ul class="dropdown-menu" aria-label="submenu">
+      <li><a href="/products/create_product">Create Product</a></li>
+      <li><a href="/products/retrieve_product">Retrieve Product</a></li>
+      <li>   <a href="/contactus/read">Read Feedback</a></li>
+      <li class="logout-form">
+        <form action="/logout" method="POST">
+          <button type="submit" aria-label="Logout">Logout</button>
+        </form>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Your Trusted Medical Store</h1>
+    <p>
+      Find all your healthcare products, prescription medicines, and personal care essentials at one place.<br />
+      Fast delivery. Genuine products. Expert advice.
+    </p>
+    <a href="/products/shop" class="shop-btn">Shop Now</a>
+  </section>
+
+  <div class="section-title">Featured Medicines</div>
+  <section class="products">
+    <!-- product cards here -->
+  </section>
+
+  <section class="contact-section">
+    <h2>Feedback</h2>
+
+    <% if (success) { %>
+      <div class="success-message"><%= success %></div>
+    <% } %>
+
+    <% if (error) { %>
+      <div class="error-message"><%= error %></div>
+    <% } %>
+
+    <form action="/contactus/contact" method="POST">
+      <label>Name</label>
+      <input type="text" name="name" required />
+      
+      <label>Email</label>
+      <input type="email" name="email" required />
+      
+      <label>Message</label>
+      <textarea rows="4" name="message" placeholder="Your Message" required></textarea>
+      
+      <button type="submit">Send </button>
+    </form>
+
+    <p>
+      Call us: +91-98765 43210 &nbsp; | &nbsp; Email: 
+      <a href="mailto:support@medicarestore.com">support@medicarestore.com</a>
+    </p>
+  </section>
+</body>
+</html>

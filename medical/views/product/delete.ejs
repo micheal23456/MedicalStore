@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><% title='Delete Confirmation' %>
+</title>
+       <link rel="stylesheet" href="/stylesheets/delete.css">
+
+</head>
+<body>
+   <h1>Delete Confirmation</h1>
+<p>Are you sure you want to delete the product below?</p>
+
+
+<p>Name: <%= product.name %></p>
+<p>Stock: <%= product.stock %></p>
+
+
+<form action="/products/delete_product/<%= product._id %>" method="post">
+    <button type="submit">Yes, Delete</button>
+    <a href="/products/retrieve_product">No, Cancel</a>
+                    <li><a href="/home">home</a></li>
+
+</form>
+</body>
+</html>
+
+

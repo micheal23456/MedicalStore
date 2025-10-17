@@ -1,0 +1,140 @@
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  color: #e0f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem;
+  font-size: 16px;
+  user-select: none;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.6rem;
+  color: #00e5ff;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 12px #00e5ff;
+  user-select: none;
+}
+
+/* Error container */
+div[style] {
+  background: #ff0033cc;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 15px #ff0033aa;
+  width: 100%;
+  max-width: 430px;
+  color: white;
+  user-select: none;
+}
+
+div[style] p {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+div[style] ul {
+  list-style: inside disc;
+}
+
+/* Form styles */
+form {
+  background: rgba(0, 230, 255, 0.12);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #00e5ff60;
+  width: 100%;
+  max-width: 430px;
+}
+
+label {
+  font-size: 1.1rem;
+  color: #95e9ff;
+  display: block;
+  margin-bottom: 0.5rem;
+  user-select: none;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  background: #203a43cc;
+  color: #e0f7fa;
+  box-shadow: inset 0 0 10px #00e5ff44;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  background: #00bcd4cc;
+  box-shadow: 0 0 18px #00e5ff;
+}
+
+input[type="submit"] {
+  background: #00e5ff;
+  color: #020202;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  padding: 0.9rem 0;
+  cursor: pointer;
+  border-radius: 50px;
+  width: 100%;
+  box-shadow: 0 0 25px #00e5ff;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+input[type="submit"]:hover {
+  background: #008ea4;
+  box-shadow: 0 0 35px #008ea4 inset;
+}
+
+/* Back link */
+li {
+  list-style: none;
+  margin-top: 1.8rem;
+  text-align: center;
+  user-select: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #00e5ff;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+li a:hover {
+  color: #008ea4;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  form {
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+}

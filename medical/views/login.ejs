@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><% title = 'Login' %>
+</title>
+     <link rel="stylesheet" href="/stylesheets/login.css">
+
+</head>
+<body>
+    <h1>Login</h1>
+<form action="/login" method="post">
+    <label>Email</label><br>
+    <input type="text" name="email"><br>
+    <label>Password</label><br>
+    <input type="password" name="password"><br>
+    <input type="submit" value="Submit">
+</form>
+<!-- for showing the validations -->
+<% if (errors && errors.length > 0) { %>
+<div style="color: red;">
+ <ul>
+     <% errors.forEach(function(error) { %>
+         <li><%= error.msg %></li>
+     <% }); %>
+ </ul>
+ </div>
+<% } %>
+<% if (message) { %>
+    <div style="color: red;">
+      <ul>
+       
+          <li><%= message %></li>
+     
+      </ul>
+    </div>
+  <% } %>
+</body>
+</html>
+
+
